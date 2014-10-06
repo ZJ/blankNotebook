@@ -1,0 +1,20 @@
+# Ignore OSX Files
+.DS_Store
+#
+# I use .ts for timestamps for makefile purposes
+*.ts
+#
+# Extra files from latex
+*.dvi
+*.aux
+*.log
+*.synctex.gz
+# PDF and tex file don't need to be checked in either
+fullLabNB.tex
+fullLabNB.pdf
+# Index-Type Files
+*.idx
+*.ilg
+*.ind
+# Hyperref File
+*.out
