@@ -1,0 +1,6 @@
+\startDay{@date@}{}
+
+% start body
+
+% end body
+

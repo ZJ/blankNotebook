@@ -1,0 +1,73 @@
+\documentclass[11pt]{book}
+% Relax justification rules a bit
+\sloppy
+
+% Add ability to strikethrough text with \sout{}
+% [normalem] keeps italics as italics instead of changing it to underlined
+\usepackage[normalem]{ulem}
+
+% Floating figures that text wraps around
+\usepackage{wrapfig}
+
+% Tables that are pretty
+\usepackage{booktabs}
+
+% Customize spacings around lists
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+% Setup Multiple Indices
+\usepackage{imakeidx}
+\makeindex[name=commits,title=Git Commits Referenced,options=-cl]
+
+% Boxes for todos, all shapes
+\usepackage{amssymb}
+
+% Better source code listing
+\usepackage{listings}
+% Small, monospaced font
+\lstset{basicstyle=\ttfamily\scriptsize}
+
+% Use color!
+\usepackage[usenames,dvipsnames]{xcolor}
+% Commit coloration
+\definecolor{commitbg}{RGB}{222,249,255}
+\definecolor{commitfg}{RGB}{13,102,255}
+% Task/Todo coloration
+\definecolor{tdcheck}{RGB}{33,222,137}
+\definecolor{tdfail}{RGB}{209,23,23}
+
+% Tikz Stuffs for timing diagrams
+\usepackage{tikz-timing}
+\usetikztiminglibrary{nicetabs}
+
+% Suffix package for adding stared command variants
+\usepackage{suffix}
+
+% Hyperref last so it hooks into everything before it properly
+\usepackage{hyperref}
+
+% Custom commands
+%% Day's headers
+\newcommand{\startDay}[2]{\section*{{\small#1:} #2}\label{date:#1}}
+%% Commit w/ repo listed
+\newcommand{\commitR}[2]{\index[commits]{0x#2@#2}\index[commits]{#1!0x#2@#2}\fcolorbox{commitfg}{commitbg}{\footnotesize\color{commitfg}\texttt{#1:#2}}}
+%% Commit w/ repo in index but not shown
+\WithSuffix\newcommand\commitR*[2]{\index[commits]{0x#2@#2}\index[commits]{#1!0x#2@#2}\fcolorbox{commitfg}{commitbg}{\footnotesize\color{commitfg}\texttt{#2}}}
+%% Commit, hash only
+\newcommand{\commit}[1]{\index[commits]{#1@#1}\fcolorbox{commitfg}{commitbg}{\footnotesize\color{commitfg}\texttt{#1}}}
+%% header for checking off today's tasks
+\newcommand{\startDone}[1]{\subsection*{Today's Tasks #1:}}
+%% Header for planning tomorrow's tasks
+\newcommand{\startTodo}[1]{\subsection*{Tomorrow's Plan #1:}}
+%% Kinds of boxes for the todo sections
+\newcommand{\todo}[2]{\begin{itemize}\item[$\square$]\textbf{#1}\end{itemize}#2}
+\newcommand{\tdcheck}[2]{\begin{itemize}\item[\color{tdcheck}{$\boxtimes$}]\textbf{#1}\end{itemize}#2}
+\newcommand{\tdfail}[2]{\begin{itemize}\item[\color{tdfail}{$\boxminus$}]\textbf{#1}\end{itemize}#2}
+
+\begin{document}
+
+\title{Lab Notebook}
+\author{Zach Smith}
+\date{\today}
+\maketitle
