@@ -53,3 +53,7 @@ Find it in `src/template/fullHeader.tex`
 
 ####Title Page####
 It also insert a title page, with `\title` set as "Lab Notebook", `\author` "Zach Smith", and `\date{\today}`.
+
+##Possible Changes##
+* Use LaTeX's `\input{}` instead of doing `cat` in the shell to combine entries
+* Make the author and title load from an external, untracked file for portability
