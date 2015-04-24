@@ -41,15 +41,15 @@ Find it in `src/template/fullHeader.tex`
 * **hyperref** for all the usual hyperlinking niceities
 
 ####Custom Commands####
-* **\startDay{<date>}{<title>}** starts a <date>'s, with optional <title> also displayed.  Automatically adds a label as "date:<date>" for use with `\ref{}`
-* **\commitR{<repository>}{<hash>}** add a formatted commit to the text.  Commits show in colored boxes in the format <repository>:<hash>, and an entry is added to the Git index for this commit.
-* **\commitR*{<repository>}{<hash>}** as above, but the repository name isn't added to the text.  The index entry is still made as normal.
-* **\commit{<hash>}** add a formatted commit, without referencing any repository.  Still added to the index.
-* **\startDone{<date>}** starts a subsection labelled "Today's Tasks <date>:".  Subsection will not be listed in TOC.
-* **\startTodo{<date>}** starts a subsection labelled "Tomorrow's Plan <date>:"  Subsection will not be listed in TOC.
-* **\todo{<title>}{<description>}** Makes an todo-list item with an unchecked box.  Format is a bold-faced <title> followed by a paragraph <description>.
-* **\tdcheck{<title>}{<description>}** As above, but with a green crossed out checkbox.
-* **\tdfail{<title>}{<description>}** As above, but with a red checkbox with a red dash in it
+* **\startDay{`<date>`}{`<title>`}** starts a `<date>`'s, with optional `<title>` also displayed.  Automatically adds a label as "date:`<date>`" for use with `\ref{}`
+* **\commitR{`<repository>`}{`<hash>`}** add a formatted commit to the text.  Commits show in colored boxes in the format `<repository>`:`<hash>`, and an entry is added to the Git index for this commit.
+* **\commitR*{`<repository>`}{`<hash>`}** as above, but the repository name isn't added to the text.  The index entry is still made as normal.
+* **\commit{`<hash>`}** add a formatted commit, without referencing any repository.  Still added to the index.
+* **\startDone{`<date>`}** starts a subsection labelled "Today's Tasks `<date>`:".  Subsection will not be listed in TOC.
+* **\startTodo{`<date>`}** starts a subsection labelled "Tomorrow's Plan `<date>`:"  Subsection will not be listed in TOC.
+* **\todo{`<title>`}{`<description>`}** Makes an todo-list item with an unchecked box.  Format is a bold-faced `<title>` followed by a paragraph `<description>`.
+* **\tdcheck{`<title>`}{`<description>`}** As above, but with a green crossed out checkbox.
+* **\tdfail{`<title>`}{`<description>`}** As above, but with a red checkbox with a red dash in it
 
 ####Title Page####
 It also insert a title page, with `\title` set as "Lab Notebook", `\author` "Zach Smith", and `\date{\today}`.
